@@ -18,13 +18,13 @@ Siga estas etapas para configurar e iniciar o monitoramento de integridade de ar
 1. **Clone o repositório**:
    - Clone este repositório para o seu sistema local usando o comando:
      ```
-     git clone (https://github.com/hoffmann-topos-lab/file_integrity_monitor)
+     git clone https://github.com/hoffmann-topos-lab/file_integrity_monitor
      ```
 
 2. **Navegue até o diretório do projeto**:
    - Mude para o diretório do projeto clonado:
      ```
-     cd file_integrity_monitor
+     cd /file_integrity_monitor
      ```
 
 3. **Certifique-se de que o Python está instalado**:
