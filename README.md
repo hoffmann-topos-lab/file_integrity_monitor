@@ -12,10 +12,35 @@ Este projeto é uma ferramenta de monitoramento de integridade de arquivos proje
 - Python 3.6 ou superior.
 
 ## Como Configurar
-1. Clone o repositório para o seu sistema local.
-2. Navegue até o diretório do projeto.
-3. (Opcional) Crie e ative um ambiente virtual Python.
-4. Certifique-se de que o Python está instalado e configurado corretamente em seu sistema.
+
+Siga estas etapas para configurar e iniciar o monitoramento de integridade de arquivos em seu sistema:
+
+1. **Clone o repositório**:
+   - Clone este repositório para o seu sistema local usando o comando:
+     ```
+     git clone (https://github.com/hoffmann-topos-lab/file_integrity_monitor)
+     ```
+
+2. **Navegue até o diretório do projeto**:
+   - Mude para o diretório do projeto clonado:
+     ```
+     cd file_integrity_monitor
+     ```
+
+3. **Certifique-se de que o Python está instalado**:
+   - Verifique se o Python está instalado e configurado corretamente em seu sistema executando:
+     ```
+     python --version
+     ```
+   - Você deverá ver a versão do Python que está instalada.
+
+4. **Modifique o arquivo de configuração**:
+   - No diretório do projeto, modifique o arquivo `config.json`. Preencha-o com as configurações iniciais necessária.
+   - Substitua os valores conforme necessário para refletir o diretório que você deseja monitorar, o intervalo de verificação em segundos e o caminho desejado para os logs de monitoramento.
+
+
+Seguindo essas etapas, você configurará o ambiente necessário para rodar o script de monitoramento de integridade de arquivos no seu sistema.
+
 
 ## Como Executar
 Para iniciar o monitoramento, execute o script da seguinte maneira:
@@ -29,7 +54,7 @@ Substitua `/caminho/para/diretorio` pelo caminho do diretório que você deseja 
 - `logs/`: Diretório onde os arquivos de log serão salvos.
 
 ## Logs
-Os logs de monitoramento são gravados no diretório `/caminho/para/diretorio/logs/`, com informações sobre cada arquivo alterado, incluindo o nome do arquivo, o caminho e o timestamp da detecção da alteração.
+Os logs de monitoramento são gravados no diretório `/logs/`, com informações sobre cada arquivo alterado, incluindo o nome do arquivo, o caminho e o timestamp da detecção da alteração.
 
 ## Execução em Background
 
