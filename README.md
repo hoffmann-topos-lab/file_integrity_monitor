@@ -20,7 +20,7 @@ Este projeto é uma ferramenta de monitoramento de integridade de arquivos proje
 ## Como Executar
 Para iniciar o monitoramento, execute o script da seguinte maneira:
 
-  python monitoramento_arquivos.py /caminho/para/diretorio
+  `python monitoramento_arquivos.py /caminho/para/diretorio`
 
 Substitua `/caminho/para/diretorio` pelo caminho do diretório que você deseja monitorar.
 
@@ -35,12 +35,12 @@ Os logs de monitoramento são gravados no diretório `/caminho/para/diretorio/lo
 
 Para executar o script em background em sistemas Unix/Linux, você pode usar o comando `nohup` ou `screen` para iniciar o script e permitir que ele continue rodando após o fechamento do terminal:
 
-  nohup python3 monitoramento_arquivos.py /caminho/para/diretorio &
+  `nohup python3 monitoramento_arquivos.py /caminho/para/diretorio &`
 
 
 Ou, usando `screen`:
 
-  screen -dm python3 monitoramento_arquivos.py /caminho/para/diretorio
+  `screen -dm python3 monitoramento_arquivos.py /caminho/para/diretorio`
 
 
 Para retornar à sessão `screen`, use `screen -r`.
@@ -53,7 +53,7 @@ Para executar o script em background no Windows, você pode utilizar o Agendador
 
 Você pode usar o PowerShell para executar o script em background. Abra o PowerShell e execute:
 
-  Start-Process python -ArgumentList "caminho\para\monitoramento_arquivos.py", "caminho\para\diretorio" -WindowStyle Hidden
+  `Start-Process python -ArgumentList "caminho\para\monitoramento_arquivos.py", "caminho\para\diretorio" -WindowStyle Hidden`
 
 
 Substitua `caminho\para\monitoramento_arquivos.py` e `caminho\para\diretorio` pelos caminhos apropriados no seu sistema.
@@ -86,12 +86,12 @@ Se preferir agendar a execução do script em intervalos regulares em vez de rod
 
 1. Abra o crontab para edição:
 
-  crontab -e
+  `crontab -e`
 
 
 2. Adicione uma linha para agendar a execução do seu script. Por exemplo, para executar o script todos os dias à meia-noite, adicione:
 
-  0 0 * * * /usr/bin/python3 /caminho/completo/para/monitoramento_arquivos.py /caminho/para/diretorio
+  `0 0 * * * /usr/bin/python3 /caminho/completo/para/monitoramento_arquivos.py /caminho/para/diretorio`
 
   
 3. Substitua `/usr/bin/python3` e `/caminho/completo/para/monitoramento_arquivos.py` pelos caminhos apropriados em seu sistema.
