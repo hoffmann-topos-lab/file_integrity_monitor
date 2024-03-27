@@ -1,0 +1,6 @@
+{
+    "diretorio_monitorado": "path/desejado",
+    "intervalo_verificacao": 60,
+    "caminho_arquivo_log": "./logs/monitoramento_log.txt"
+  }
+  
