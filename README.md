@@ -3,6 +3,23 @@
 ## Descrição
 Este projeto é uma ferramenta de monitoramento de integridade de arquivos projetada para detectar e registrar alterações em arquivos dentro de um diretório especificado e seus subdiretórios. Ele calcula e compara os hashes SHA-256 de arquivos para identificar modificações.
 
+## Atualizações
+
+-Implementação de Threading:
+A nova versão utiliza threading para permitir que o monitoramento continue rodando em um plano de fundo separado, melhorando a usabilidade do script sem bloquear a entrada do usuário.
+
+-Uso de SQLite para Persistência de Dados:
+Os estados dos arquivos agora são armazenados em um banco de dados SQLite. Isso melhora a eficiência na verificação de mudanças e permite uma recuperação de estado mais robusta entre as execuções do script.
+
+-Melhorias no Sistema de Logging:
+A configuração de logging foi aprimorada para utilizar o módulo logging do Python, o que proporciona uma gravação de logs mais estruturada e fácil de filtrar, utilizando níveis de severidade e um formato de mensagem padronizado.
+
+-Verificações de Segurança na Leitura de Configurações:
+Foram adicionadas verificações para prevenir ataques de path traversal ao normalizar e resolver caminhos de diretórios obtidos a partir do arquivo de configuração. Além disso, agora o script trata exceções relacionadas à leitura do arquivo de configuração, garantindo que o script não falhe inesperadamente.
+
+Leitura Eficiente de Arquivos:
+A função calcular_hash_arquivo foi modificada para ler o arquivo em blocos, o que reduz o uso de memória em arquivos grandes e trata exceções de arquivo não encontrado, permissão negada, e erros de I/O, registrando adequadamente nos logs.
+
 ## Recursos
 - Monitoramento de arquivos em tempo real.
 - Registro de todas as alterações detectadas em um arquivo de log.
@@ -18,7 +35,7 @@ Siga estas etapas para configurar e iniciar o monitoramento de integridade de ar
 1. **Clone o repositório**:
    - Clone este repositório para o seu sistema local usando o comando:
      ```
-     git clone (https://github.com/hoffmann-topos-lab/file_integrity_monitor)
+     git clone https://github.com/hoffmann-topos-lab/file_integrity_monitor
      ```
 
 2. **Navegue até o diretório do projeto**:
@@ -128,6 +145,18 @@ Lembre-se de que ao usar cronjob, o script será iniciado e terminará com base 
 ## Atualizações Futuras
 - **Notificações por E-mail**: Implementar notificações por e-mail para alertar os usuários sobre alterações detectadas.
 - **Interface de Usuário**: Desenvolver uma interface de usuário web para facilitar o monitoramento e a revisão dos logs de alterações.
+
+## Considerações Adicionais de Segurança
+
+- Permissões de Arquivos e Diretórios:
+Certifique-se de que o script e o diretório de logs tenham as permissões corretas para prevenir acesso não autorizado. O script não deve ter permissões de administrador a menos que estritamente necessário.
+
+-Validação e Sanitização de Inputs:
+Embora já hajam algumas soluções contra SLQi e Path Traversal, é crucial validar e sanitizar todas as entradas do usuário e dos arquivos de configuração para prevenir injeções e outras vulnerabilidades.
+
+-Atualizações e Patches:
+Mantenha todas as bibliotecas e o próprio Python atualizados com as últimas correções de segurança para mitigar vulnerabilidades conhecidas.
+
 
 ## Contribuindo
 Sinta-se à vontade para contribuir com o projeto. Você pode enviar pull requests ou abrir issues para discutir melhorias ou adicionar novas funcionalidades.
